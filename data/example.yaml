@@ -1,0 +1,44 @@
+# EXAMPLE FILE TO ILLUSTRATE THE SYNTAX
+
+# Use in the build process? Set to true if you want this entry to be built
+build: false
+
+# how the data provider is identified (only use lowercase letters, numbers and _ instead of spaces
+provider_slug: "example_provider"
+
+# Full readable Name of the provider
+provider_fullname: "The Example Provider Foundataion"
+
+# How to credit the provider for data
+provider_credit: "The Example Provider Credit"
+
+# Textual description of the data
+data_headline: "The most interesting dataset"
+data_content: 'This is the full description of the dataset. It can contain HTML Tags<br /><br /> to format this thing.'
+
+# filename in the /img/daten/ directory
+data_image_filename: "interesting_dataset.jpg"
+
+# Year the dataset was initially published (This actually is a list)
+data_years:
+- 2018
+
+# License(s) of the data (This actually is a list, to allow multiply licenses within one dataset)
+# Licenses must be in: Public Domain, CC0, CC-BY, CC-BY-SA,
+# If there are different licenses for metadata and media use the description
+data_licenses:
+    - license: Public Domain
+      description: "Metadata"
+
+# Type / Format of the data (This is a list too, as, you guessed it: Sometimes multiple formats
+# are present within one dataset.
+# Should be one of: API, AVI, BEACON, CSV, DOC, EDM, FITS, GML, HTML, JPEG, JSON, KML, MDB
+# MP3, MPG, MySQL, OBJ, PDF, PLY, PNG, RDF, STL, SHapeFiles, TIFF, TSV, TXT, Turtle, UDL, WFS, WMS, XLSX, XML
+data_types:
+- TIFF
+
+# List of links to the data presentation, the data provider, a download link, etc..
+links:
+    - url: "http://ub.uni-leipzig.de"
+      target: "_blank"
+      description: "Universitätsbibliothek Leipzig"

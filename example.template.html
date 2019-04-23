@@ -1,0 +1,57 @@
+<div class="data-entry" id="{{ provider_slug }}">
+     <div class="data-interlude">
+         <h3>{{ provider_fullname }}</h3>
+     </div>
+    {% for data_point in data_points %}
+     <div class="data-point">
+         <div class="data-media">
+             <div class="thumbnail">
+                 <img src="{{ '{{' }} site.baseurl {{ '}}' }}img/daten/{{ data_point.data_image_filename }}"
+                      alt=""/>
+             </div>
+         </div>
+         <div class="data-content">
+             <h4>
+                {{ data_point.data_headline }}
+             </h4>
+             <p>
+                 {{ data_point.data_content}}
+             </p>
+
+
+         </div>
+         <div class="data-meta">
+             <dl>{% if data_point.provider_credit %}
+                 <dt>Namensnennung</dt>
+                 <dd>{{ data_point.provider_credit }}
+                 </dd>
+                 {% endif %}
+                 <dt>Lizenz</dt>
+                 <dd class="data-license">
+                     {% for license in data_point.data_licenses %}
+                     <span class="label label-danger">{{ license.license }}</span> {{ license.description }}<br/>
+                     {% endfor %}
+                 </dd>
+                 <dt>Dateityp</dt>
+                 <dd class="data-type">
+                     {% for format in data_point.data_types %}
+                     <span class="label label-info">{{ format }}</span>
+                     {% endfor %}
+                 </dd>
+                 <dt>Jahr</dt>
+                 <dd class="data-year">
+                     {% for year in data_point.data_years %}
+                     <span class="label label-warning">{{ year }}</span>
+                     {% endfor %}
+                 </dd>
+                 <dt>Links</dt>
+                 <dd>
+                     {% for link in data_point.links %}
+                     <a  target="{{ link.target }}" href="{{ link.url }}">{{ link.description }}</a><br/>
+                     {% endfor %}
+                 </dd>
+             </dl>
+         </div>
+     </div>
+    {% endfor %}
+ </div>
